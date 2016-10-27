@@ -9,7 +9,7 @@
 
 <form action="{% url 'cloudplay:favourite' album.id %}" method="POST">
 	{% csrf_token %}
-	{% for song in album.sng_set.all %}
+	{% for song in album.song_set.all %}
 		<input type="radio" id="song{{ forloop.counter }}" name="song" value="{{ song.id }}">
 		<label for="song{{ forloop.counter }}">
 			{{ song.song_title }}
